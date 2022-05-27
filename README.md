@@ -1,11 +1,11 @@
-# react-native-appmetrica
+# react-native-appmetrica-alpha
 React Native bridge to the [AppMetrica](https://appmetrica.yandex.com/) on both iOS and Android.
 
 ## Installation
 
-1. `npm install react-native-appmetrica --save`
+1. `npm install react-native-appmetrica-alpha --save`
 2. If React Native version <= 0.59: \
-  `react-native link react-native-appmetrica`
+  `react-native link react-native-appmetrica-alpha`
 3. iOS only
   * if `${PROJECT_DIR}/ios/Podfile` exists: \
   `npx pod-install`
@@ -14,20 +14,20 @@ React Native bridge to the [AppMetrica](https://appmetrica.yandex.com/) on both 
 
 ## Usage
 
-```js
-import AppMetrica from 'react-native-appmetrica';
+```ts
+import { activate, reportEvent, reportError } from 'react-native-appmetrica-alpha';
 
 // Starts the statistics collection process.
-AppMetrica.activate({
+.activate({
   apiKey: '...KEY...',
   sessionTimeout: 120,
   firstActivationAsUpdate: false,
 });
 
 // Sends a custom event message and additional parameters (optional).
-AppMetrica.reportEvent('My event');
-AppMetrica.reportEvent('My event', { foo: 'bar' });
+reportEvent('My event');
+reportEvent('My event', { foo: 'bar' });
 
 // Send a custom error event.
-AppMetrica.reportError('My error');
+reportError('My error');
 ```
