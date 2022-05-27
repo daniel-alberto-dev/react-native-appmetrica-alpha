@@ -154,7 +154,6 @@ afterEvaluate { project ->
         repositories.maven {
             // Deploy to react-native-event-bridge/maven, ready to publish to npm
             url = "file://${projectDir}/../android/maven-publish"
-
         }
     }
 }
