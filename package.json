@@ -3,7 +3,7 @@
   "title": "Yandex AppMetrica React Native Plugin",
   "version": "2.0.2",
   "description": "React Native plugin for AppMetrica analytics tool",
-  "main": "./build/index.js",
+  "main": "./build",
   "typings": "./src/index.ts",
   "scripts": {
     "build": "tsc -b",
@@ -37,7 +37,7 @@
     "typescript": "^4.7.2"
   },
   "files": [
-    "build/",
+    "build",
     "src",
     "android",
     "ios"
