@@ -1,12 +1,12 @@
 module.exports = {
   root: true,
   extends: '@react-native-community',
-  "overrides": [
+  overrides: [
     {
-      "files": ["index.js"],
-      "rules": {
-        "no-undef": "off"
+      files: ['index.js'],
+      rules: {
+        'no-undef': 'off',
       },
-    }
+    },
   ],
 };
