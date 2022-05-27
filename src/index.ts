@@ -9,7 +9,7 @@ import { NativeModules } from 'react-native';
 
 const { AppMetrica } = NativeModules;
 
-type AppMetricaConfig = {
+export type AppMetricaConfig = {
   apiKey: string;
   appVersion?: string;
   crashReporting?: boolean;
@@ -46,67 +46,63 @@ type Location = {
 
 type AppMetricaDeviceIdReason = 'UNKNOWN' | 'NETWORK' | 'INVALID_RESPONSE';
 
-export default {
-  activate(config: AppMetricaConfig) {
-    AppMetrica.activate(config);
-  },
+export const activate = (config: AppMetricaConfig) => {
+  AppMetrica.activate(config);
+};
 
-  // Android
-  async getLibraryApiLevel(): Promise<number> {
-    return AppMetrica.getLibraryApiLevel();
-  },
+// Android
+export const getLibraryApiLevel = async (): Promise<number> =>
+  AppMetrica.getLibraryApiLevel();
 
-  async getLibraryVersion(): Promise<string> {
-    return AppMetrica.getLibraryVersion();
-  },
+export const getLibraryVersion = async (): Promise<string> =>
+  AppMetrica.getLibraryVersion();
 
-  pauseSession() {
-    AppMetrica.pauseSession();
-  },
+export const pauseSession = () => {
+  AppMetrica.pauseSession();
+};
 
-  reportAppOpen(deeplink?: string) {
-    AppMetrica.reportAppOpen(deeplink);
-  },
+export const reportAppOpen = (deeplink?: string) => {
+  AppMetrica.reportAppOpen(deeplink);
+};
 
-  reportError(error: string) {
-    AppMetrica.reportError(error);
-  },
+export const reportError = (error: string) => {
+  AppMetrica.reportError(error);
+};
 
-  reportEvent(eventName: string, attributes: Object = {}) {
-    AppMetrica.reportEvent(eventName, attributes);
-  },
+export const reportEvent = (eventName: string, attributes: Object = {}) => {
+  AppMetrica.reportEvent(eventName, attributes);
+};
 
-  reportReferralUrl(referralUrl: string) {
-    AppMetrica.reportReferralUrl(referralUrl);
-  },
+export const reportReferralUrl = (referralUrl: string) => {
+  AppMetrica.reportReferralUrl(referralUrl);
+};
 
-  requestAppMetricaDeviceID(
-    listener: (deviceId?: String, reason?: AppMetricaDeviceIdReason) => void
-  ) {
-    AppMetrica.requestAppMetricaDeviceID(listener);
-  },
+export const requestAppMetricaDeviceID = (
+  listener: (deviceId?: String, reason?: AppMetricaDeviceIdReason) => void
+) => {
+  AppMetrica.requestAppMetricaDeviceID(listener);
+};
 
-  resumeSession() {
-    AppMetrica.resumeSession();
-  },
+export const resumeSession = () => {
+  AppMetrica.resumeSession();
+};
 
-  sendEventsBuffer() {
-    AppMetrica.sendEventsBuffer();
-  },
+export const sendEventsBuffer = () => {
+  AppMetrica.sendEventsBuffer();
+};
 
-  setLocation(location?: Location) {
-    AppMetrica.setLocation(location);
-  },
+export const setLocation = (location?: Location) => {
+  AppMetrica.setLocation(location);
+};
 
-  setLocationTracking(enabled: boolean) {
-    AppMetrica.setLocationTracking(enabled);
-  },
+export const setLocationTracking = (enabled: boolean) => {
+  AppMetrica.setLocationTracking(enabled);
+};
 
-  setStatisticsSending(enabled: boolean) {
-    AppMetrica.setStatisticsSending(enabled);
-  },
+export const setStatisticsSending = (enabled: boolean) => {
+  AppMetrica.setStatisticsSending(enabled);
+};
 
-  setUserProfileID(userProfileID?: string) {
-    AppMetrica.setUserProfileID(userProfileID);
-  },
+export const setUserProfileID = (userProfileID?: string) => {
+  AppMetrica.setUserProfileID(userProfileID);
 };
