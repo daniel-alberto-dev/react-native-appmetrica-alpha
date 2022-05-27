@@ -52,11 +52,11 @@ export default {
   },
 
   // Android
-  async getLibraryApiLevel() {
+  async getLibraryApiLevel(): Promise<number> {
     return AppMetrica.getLibraryApiLevel();
   },
 
-  async getLibraryVersion() {
+  async getLibraryVersion(): Promise<string> {
     return AppMetrica.getLibraryVersion();
   },
 
